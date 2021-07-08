@@ -1,0 +1,4 @@
+Route
+/article                    ArticleController   index       Liste des articles
+/article/{id}               ArticleController   details     Article id = $id
+/article/by-genre/{genre}   ArticleController   byGenre     Articles $genre

@@ -1,0 +1,19 @@
+{% extends "base-layout.html.twig" %}
+{% block body %}
+    <h3>{{ calcul }}</h3>
+
+    <p>Vous aimez les {{ fruitList[0] }}</p>
+
+    <p>Bonjour {{ person.firstName }} {{ person.name }}</p>
+
+    <ul>
+        {% for item in fruitList %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block title %}
+    Addition
+{% endblock %}
+

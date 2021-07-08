@@ -1,3 +1,13 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+# La route associe un chemin (url)
+# avec une classe et une méthode de cette classe
+first_home:
+  path: /
+  controller: App\Controller\FirstController::index
+
+first_hello:
+  path: /hello/{name}
+  controller: App\Controller\FirstController::hello
