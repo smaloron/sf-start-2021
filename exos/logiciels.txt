@@ -1,0 +1,11 @@
+Logiciels
+--------------------------------------------
+composer    Téléchargement des bibliothèques
+git         Gestion de version
+nodeJS      Exécution de code JS en dehors du navigateur
+VirtualBox  Virtualisation de système d'explotation
+Vagrant     Scripter la création de machines virtuelles
+Local       Un environnement de test pour Wordpress
+XAMPP       Installation d'un serveur web et d'un SGBDR
+gitkraken   Client graphique pour Git
+PhpStorm    IDE pour PHP

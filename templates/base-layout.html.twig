@@ -18,11 +18,43 @@
 <body class="container">
 
 <div class="row">
-    <header class="bg-success">
-        <h1>Mon super site</h1>
+    <header class="bg-warning">
+        <h1>{{ site_name }}</h1>
+        <h3>{{ pitch }}</h3>
+
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('article_index') }}">
+                    Liste des articles
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('article_new_form') }}">
+                    Nouvel article
+                </a>
+            </li>
+        </ul>
     </header>
 
-    <div class="col-md-10">
+    <div class="col-md-12">
+
+        {% if app.session.flashBag.has('error') %}
+            <div class="alert alert-danger mt-3">
+                {% for message in app.flashes('error') %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if app.session.flashBag.has('success') %}
+            <div class="alert alert-success mt-3">
+                {% for message in app.flashes('success') %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
         {% block body %}{% endblock %}
     </div>
 </div>

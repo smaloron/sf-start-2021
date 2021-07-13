@@ -1,7 +1,48 @@
 {% extends "base-layout.html.twig" %}
 
 {% block body %}
-    <h1>Liste des articles</h1>
+    <h1>{{ title }}</h1>
+
+    <table class="table">
+        <tr>
+            <th>Titre</th>
+            <th>Genre</th>
+            <th>Auteur</th>
+            <th></th>
+        </tr>
+        {% for article in articleList %}
+            <tr>
+                <td>
+                    <a href="{{ path('article_details', {'id': article.id}) }}">
+                        {{ article.title }}
+                    </a>
+                </td>
+
+                <td>
+                    <a href="{{ path('article_by_genre', {'genre': article.genre}) }}">
+                        {{ article.genre }}
+                    </a>
+                </td>
+
+                <td>
+                    {{ article.author.fullName }}
+                </td>
+
+                <td>
+                    <a href="{{ path('article_delete', {'id': article.id}) }}"
+                    class="btn btn-danger">
+                        supprimer
+                    </a>
+
+                    <a href="{{ path('article_update', {'id': article.id}) }}"
+                       class="btn btn-warning">
+                        modifier
+                    </a>
+                </td>
+
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
 
 {% block title %}
