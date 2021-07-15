@@ -3,7 +3,9 @@ twig:
     globals:
         site_name: 'Mon application'
         pitch: 'Une application totalement inutile mais super cool'
-    form_themes: ['bootstrap_4_layout.html.twig']
+    form_themes:
+        - 'bootstrap_5_layout.html.twig'
+        - '@FOSCKEditor/form/ckeditor_widget.html.twig'
 
 when@test:
     twig:

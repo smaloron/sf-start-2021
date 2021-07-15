@@ -6,6 +6,7 @@ use App\Entity\Article;
 
 
 use App\Entity\Author;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 
@@ -34,9 +35,9 @@ class ArticleFormType extends AbstractType
                 "widget" => "single_text",
                 "input" => "datetime_immutable"
             ])*/
-            ->add('content', TextareaType::class, [
+            ->add('content', CKEditorType::class, [
                 "label" => "Texte de l'article",
-                "attr" => ["rows" => "8", "class" => "texte"]
+                //"attr" => ["rows" => "8", "class" => "texte"]
             ])
             ->add('genre')
             ->add('submit', SubmitType::class, [

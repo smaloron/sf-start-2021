@@ -2,9 +2,6 @@
     "behat/transliterator": {
         "version": "v1.3.0"
     },
-    "composer/package-versions-deprecated": {
-        "version": "1.11.99.2"
-    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -103,6 +100,18 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "friendsofsymfony/ckeditor-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "8eb1cd0962ded6a6d6e1e5a9b6d3e888f9f94ff6"
+        },
+        "files": [
+            "config/packages/fos_ckeditor.yaml"
+        ]
+    },
     "fzaninotto/faker": {
         "version": "v1.5.0"
     },
@@ -110,7 +119,7 @@
         "version": "v3.1.0"
     },
     "laminas/laminas-code": {
-        "version": "4.4.0"
+        "version": "4.4.2"
     },
     "monolog/monolog": {
         "version": "2.3.0"
@@ -154,6 +163,9 @@
             "config/packages/stof_doctrine_extensions.yaml"
         ]
     },
+    "symfony/asset": {
+        "version": "v5.3.2"
+    },
     "symfony/cache": {
         "version": "v5.3.3"
     },
@@ -187,9 +199,6 @@
             "config/packages/dev/debug.yaml"
         ]
     },
-    "symfony/debug-pack": {
-        "version": "v1.0.9"
-    },
     "symfony/dependency-injection": {
         "version": "v5.3.3"
     },
@@ -210,6 +219,9 @@
     },
     "symfony/event-dispatcher-contracts": {
         "version": "v2.4.0"
+    },
+    "symfony/expression-language": {
+        "version": "v5.3.0"
     },
     "symfony/filesystem": {
         "version": "v5.3.3"
@@ -278,7 +290,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "3.7",
-            "ref": "329f6a5ef2e7aa033f802be833ef8d1268dd0848"
+            "ref": "a7bace7dbc5a7ed5608dbe2165e0774c87175fe6"
         },
         "files": [
             "config/packages/dev/monolog.yaml",
@@ -290,8 +302,8 @@
     "symfony/options-resolver": {
         "version": "v5.3.0"
     },
-    "symfony/orm-pack": {
-        "version": "v2.1.0"
+    "symfony/password-hasher": {
+        "version": "v5.3.3"
     },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.23.0"
@@ -314,9 +326,6 @@
     "symfony/polyfill-php81": {
         "version": "v1.23.0"
     },
-    "symfony/profiler-pack": {
-        "version": "v1.0.5"
-    },
     "symfony/property-access": {
         "version": "v5.3.0"
     },
@@ -332,7 +341,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "5.3",
-            "ref": "2d706bd8c6a9e6730343bb22092dabba1f42f4f3"
+            "ref": "44633353926a0382d7dfb0530922c5c0b30fae11"
         },
         "files": [
             "config/packages/routing.yaml",
@@ -340,6 +349,30 @@
         ]
     },
     "symfony/runtime": {
+        "version": "v5.3.3"
+    },
+    "symfony/security-bundle": {
+        "version": "5.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.3",
+            "ref": "8b35bfc00a7716db4ca5a764a4b338476ca3a704"
+        },
+        "files": [
+            "config/packages/security.yaml"
+        ]
+    },
+    "symfony/security-core": {
+        "version": "v5.3.3"
+    },
+    "symfony/security-csrf": {
+        "version": "v5.3.3"
+    },
+    "symfony/security-guard": {
+        "version": "v5.3.0"
+    },
+    "symfony/security-http": {
         "version": "v5.3.3"
     },
     "symfony/service-contracts": {
@@ -363,15 +396,12 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "5.3",
-            "ref": "b416645602504d22d15912e0918001e6d71bb9fa"
+            "ref": "3dd530739a4284e3272274c128dbb7a8140a66f1"
         },
         "files": [
             "config/packages/twig.yaml",
             "templates/base.html.twig"
         ]
-    },
-    "symfony/twig-pack": {
-        "version": "v1.0.1"
     },
     "symfony/validator": {
         "version": "4.3",
