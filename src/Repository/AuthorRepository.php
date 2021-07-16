@@ -30,6 +30,13 @@ class AuthorRepository extends ServiceEntityRepository
         return $qb->getQuery()->getResult();
     }
 
+    public function testSQL(){
+        $sql = "SELECT * FROM authors WHERE authors.name LIKE '%a%'";
+        $pdo = $this->getEntityManager()->getConnection();
+        $query = $pdo->query($sql);
+        return $query->fetchAll();
+    }
+
     // /**
     //  * @return Author[] Returns an array of Author objects
     //  */

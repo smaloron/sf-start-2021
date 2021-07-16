@@ -41,6 +41,8 @@ class ArticleController extends AbstractController
         dump($tagRepository->getTagsWithArticlesNumber());
         dump($authorRepository->getAuthorsByTag("Symfony"));
 
+        dump($authorRepository->testSQL());
+
         return $this->render(
             "article/index.html.twig",
             [
