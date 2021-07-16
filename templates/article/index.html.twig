@@ -29,15 +29,19 @@
                 </td>
 
                 <td>
-                    <a href="{{ path('article_delete', {'id': article.id}) }}"
-                    class="btn btn-danger">
-                        supprimer
-                    </a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('article_delete', {'id': article.id}) }}"
+                        class="btn btn-danger">
+                            supprimer
+                        </a>
+                    {% endif %}
 
-                    <a href="{{ path('article_update', {'id': article.id}) }}"
-                       class="btn btn-warning">
-                        modifier
-                    </a>
+                    {% if is_granted('ROLE_USER') %}
+                        <a href="{{ path('article_update', {'id': article.id}) }}"
+                           class="btn btn-warning">
+                            modifier
+                        </a>
+                    {% endif %}
                 </td>
 
             </tr>

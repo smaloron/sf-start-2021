@@ -67,6 +67,13 @@ class Article {
      */
     private $comments;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Tag::class)
+     *
+     * @var ArrayCollection
+     */
+    private $tags;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();

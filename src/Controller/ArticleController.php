@@ -127,6 +127,10 @@ class ArticleController extends AbstractController
         ArticleRepository $repository,
         EntityManagerInterface $manager
     ){
+
+        // Vérification des autorisations
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
         $article = $repository->findOneBy(["id" => $id]);
         if($article){
             $manager->remove($article);
