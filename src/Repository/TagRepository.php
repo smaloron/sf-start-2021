@@ -19,6 +19,16 @@ class TagRepository extends ServiceEntityRepository
         parent::__construct($registry, Tag::class);
     }
 
+    public function getTagsWithArticlesNumber(){
+        $qb = $this->createQueryBuilder("t")
+        ->select("t.tagName, COUNT(a.id) as nb")
+        ->join("t.articles", "a")
+        ->groupBy("t.id");
+        return $qb->getQuery()->getArrayResult();
+    }
+
+    
+
     // /**
     //  * @return Tag[] Returns an array of Tag objects
     //  */

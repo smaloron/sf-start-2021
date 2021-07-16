@@ -6,6 +6,7 @@ use App\Entity\Article;
 
 
 use App\Entity\Author;
+use App\Entity\Tag;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -27,8 +28,13 @@ class ArticleFormType extends AbstractType
                 "label" => "Auteur",
                 "class" => Author::class,
                 "choice_label" => "fullName",
-                "expanded" => true,
-                "multiple" => false
+            ])
+            ->add("tags", EntityType::class, [
+                "label" => "Tags",
+                "class" => Tag::class,
+                "choice_label" => "tagName",
+                "multiple" => true,
+                "expanded" => true
             ])
             /*->add('createdAt', DateTimeType::class, [
                 "label" => "Date de publication",

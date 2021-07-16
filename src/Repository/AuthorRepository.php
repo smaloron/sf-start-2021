@@ -19,6 +19,17 @@ class AuthorRepository extends ServiceEntityRepository
         parent::__construct($registry, Author::class);
     }
 
+    public function getAuthorsByTag(string $tagName){
+        $qb = $this->createQueryBuilder("a")
+        ->join("a.articles", "p")
+        ->join("p.tags", "t")
+        ->select("a")
+        ->where("t.tagName= :tag")
+        ->setParameter("tag", $tagName);
+
+        return $qb->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Author[] Returns an array of Author objects
     //  */

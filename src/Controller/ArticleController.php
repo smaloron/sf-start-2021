@@ -7,10 +7,12 @@ namespace App\Controller;
 use App\Entity\Article;
 
 use App\Entity\Comment;
+use App\Entity\Tag;
 use App\Form\ArticleFormType;
 use App\Form\CommentFormType;
 use App\Repository\ArticleRepository;
 use App\Repository\AuthorRepository;
+use App\Repository\TagRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,9 +32,14 @@ class ArticleController extends AbstractController
      * @Route("/", name="article_index")
      * @return Response
      */
-    public function index(ArticleRepository $repository)
+    public function index(  ArticleRepository $repository, 
+                            TagRepository $tagRepository,
+                            AuthorRepository $authorRepository)
     {
         $data = $repository->findAll();
+
+        dump($tagRepository->getTagsWithArticlesNumber());
+        dump($authorRepository->getAuthorsByTag("Symfony"));
 
         return $this->render(
             "article/index.html.twig",
@@ -208,6 +215,17 @@ class ArticleController extends AbstractController
                         . $author->getFirstName() . " "
                         . $author->getName(),
             "articleList" => $author->getArticles()
+        ]);
+    }
+
+    /**
+     * @Route("/by-tag/{id}", name="article_by_tag")
+     *
+     */
+    public function byTag(Tag $tag){
+        return $this->render("article/index.html.twig", [
+            "title" => "Liste des article pour le tag : ". $tag->getTagName(),
+            "articleList" => $tag->getArticles()
         ]);
     }
 

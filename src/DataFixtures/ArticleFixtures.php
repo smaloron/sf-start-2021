@@ -37,6 +37,13 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
                 ->setAuthor(
                     $this->getReference("author". mt_rand(1, 4))
                 );
+
+                // Génération d'un tag aléatoire
+                $tagList = TagFixtures::$tags;
+                $randomReference = array_rand($tagList);
+                $tag = $this->getReference($tagList[$randomReference]);
+                $article->addTag($tag);
+
             $manager->persist($article);
         }
 
